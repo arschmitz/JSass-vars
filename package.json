@@ -1,0 +1,40 @@
+{
+  "name": "jsass-vars",
+  "description": "A module to compile Javascript modules into valid scss variable files and a coresponding combined javascript file for use in the browser",
+  "version": "0.0.1",
+  "author": {
+    "name": "Alex Schmitz",
+    "url": "https://github.com/arschmitz/jsass-vars/blob/master/AUTHORS.txt"
+  },
+  "homepage": "https://github.com/arschmitz/jsass-vars",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/arschmitz/jsass-vars.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arschmitz/jsass-vars/issues"
+  },
+  "license": {
+    "name": "MIT",
+    "url": "http://www.opensource.org/licenses/mit-license.php"
+  },
+  "keywords": [
+    "sass",
+    "json",
+    "variables",
+    "modules",
+    "javascript",
+    "css",
+    "scss"
+  ],
+  "main": "qunit-assert-classes.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "glob": "5.0.6",
+    "json-sass": "1.3.5",
+    "babel": "~4.1.0",
+    "lodash": "3.9.1"
+  }
+}
