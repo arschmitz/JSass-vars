@@ -22,8 +22,17 @@ module.exports = function( src, options ) {
 	var files = getFiles( src );
 	var variables;
 	var output = "";
+	var defaults = {
+		dest: false,
+		jsDest: options.dest ? options.dest.replace( ".scss", ".js" ) : undefined,
+		global: "sassvars",
+		namespace: "",
+		prependModule: false,
+		headers: true,
+		template: __dirname + "/lib/template.js"
+	};
 
-	console.log( files );
+	options = _.merge( {}, defaults, options );
 
 	for ( var i = 0; i < files.length; i++ ) {
 		variables = require( files[ i ] );
@@ -44,12 +53,14 @@ module.exports = function( src, options ) {
 	}
 
 	if ( options.dest ) {
-		fs.writeFileSync( path.join( options.dest, options.name + ".scss" ), output );
-		var template = fs.readFileSync( options.template || __dirname + "/lib/template.js", "utf-8" );
+		fs.writeFileSync( options.dest, output );
+	}
+	if ( options.jsDest ) {
+		var template = fs.readFileSync( options.template, "utf-8" );
 
 		template = template.replace( "/*>>varibleObject>>*/", JSON.stringify( variables, undefined, 4 ) )
-			.replace( "/*>>globalName>>*/", options.name );
-		fs.writeFileSync( path.join( options.dest, options.name + ".js" ), template );
+			.replace( "/*>>globalName>>*/", options.global );
+		fs.writeFileSync( options.jsDest, template );
 	}
 
 	return variables;

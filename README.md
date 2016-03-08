@@ -14,7 +14,7 @@ with out AMD it will create a single global object containing the varibels.
 ## src ( Required )
 Type: `String|Array`
 
-Accepts any globing pattern or an array of patterns.
+Accepts any globing pattern or an array of patterns. Use an array if your files are order dependant.
 
 ## Options
 
@@ -22,15 +22,18 @@ Accepts any globing pattern or an array of patterns.
 Type: `String`
 Default value: `undefined`
 
-If set the output files will be saved here.
+If set the `scss` output files will be saved here.
 
-#### name
+#### jsDest
 Type: `String`
-Default value: `sassVars`
+Default value: same as dest replacing `.scss` with `.js`
 
-Name to use for variables file names creates
-`[ value ].js` and `[ value ].scss`
-* Also used for global namespace in browser enviroments.
+If set the js output files will be saved here.
+
+### global
+Type: `String`
+Default value: "sassVars"
+* Global namespace in browser enviroments.
 
 #### namespace
 Type: `String`
@@ -49,3 +52,10 @@ Type: `Boolean`
 Default value: `true`
 
 Output module names as heads in scss file
+
+#### template
+Type: `Boolean`
+Default value: `true`
+
+Path to custom template file
+if true it uses the default template
