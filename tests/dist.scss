@@ -1,0 +1,136 @@
+$chassis-breakpoints-viewport-sm-min: 400px;
+$chassis-breakpoints-viewport-md-min: 768px;
+$chassis-breakpoints-viewport-lg-min: 920px;
+$chassis-breakpoints-viewport-xl-min: 1200px;
+$chassis-colors-default: (
+  base: #F5F5F5,
+  light: #FFFFFF,
+  dark: #EEEEEE,
+  darker: #E0E0E0
+);
+$chassis-colors-primary: (
+  base: #3F51B5,
+  light: #5C6BC0,
+  dark: #3949AB,
+  darker: #303F9F
+);
+$chassis-colors-success: (
+  base: #43A047,
+  light: #4CAF50,
+  dark: #388E3C,
+  darker: #2E7D32
+);
+$chassis-colors-warning: (
+  base: #FF5722,
+  light: #FF7043,
+  dark: #F4511E,
+  darker: #E64A19
+);
+$chassis-colors-info: (
+  base: #039BE5,
+  light: #03A9F4,
+  dark: #0288D1,
+  darker: #0277BD
+);
+$chassis-colors-error: (
+  base: #F44336,
+  light: #EF5350,
+  dark: #E53935,
+  darker: #D32F2F
+);
+$chassis-colors-text: (
+  base: #212121,
+  light: #727272
+);
+$chassis-colors-background: (
+  base: #fff
+);
+$chassis-typography-normal: normal;
+$chassis-typography-bold: bold;
+$chassis-typography-color: #222;
+$chassis-typography-fontSize: 20px;
+$chassis-typography-lineHeight: 1.5;
+$chassis-typography-defaultFont: (
+  color: #222,
+  font-size: 20px,
+  line-height: 1.5
+);
+$chassis-typography-monospace: "courier new", monospace;
+$chassis-typography-serif: Georgia, "Times New Roman", Times, serif;
+$chassis-typography-sans: Helvetica, Arial, sans-serif;
+$chassis-btn-shadows: (
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+  box-shadow-base: 0 2px 5px 0 rgba(0,0,0,.26),
+  box-shadow-active: 0 3px 10px 0 rgba(0,0,0,.2),
+  box-shadow-disabled: 0 0 0 rgba(0,0,0,0)
+);
+$chassis-btn-btn: (
+  font-weight: 500,
+  margin: .25em,
+  text-transform: uppercase,
+  letter-spacing: 1px
+);
+$chassis-btn-font: $sans;
+$chassis-btn-default: (
+  color: #212121,
+  background: $default,
+  border: transparent,
+  shadow: true
+);
+$chassis-btn-primary: (
+  color: #ffffff,
+  background: $primary,
+  border: transparent,
+  shadow: true
+);
+$chassis-btn-success: (
+  color: #ffffff,
+  background: $success,
+  border: transparent,
+  shadow: true
+);
+$chassis-btn-info: (
+  color: #ffffff,
+  background: $info,
+  border: transparent,
+  shadow: true
+);
+$chassis-btn-warning: (
+  color: #ffffff,
+  background: $warning,
+  border: transparent,
+  shadow: true
+);
+$chassis-btn-danger: (
+  color: #ffffff,
+  background: $error,
+  border: transparent,
+  shadow: true
+);
+$chassis-btn-disabled: (
+  opacity: .6
+);
+$chassis-btn-lg: (
+  border-radius: 2px,
+  font-size: 16px,
+  line-height: 16px,
+  padding: .75em 1.25em
+);
+$chassis-btn-md: (
+  border-radius: 2px,
+  font-size: 14px,
+  line-height: 14px,
+  padding: .5em 1em
+);
+$chassis-btn-sm: (
+  border-radius: 2px,
+  font-size: 12px,
+  line-height: 12px,
+  padding: .45em .75em
+);
+$chassis-btn-xs: (
+  border-radius: 2px,
+  font-size: 12px,
+  line-height: 12px,
+  padding: .35em
+);

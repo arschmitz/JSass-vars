@@ -31,12 +31,10 @@ module.exports = function( src, options ) {
 		headers: true,
 		template: __dirname + "/lib/template.js"
 	};
-	console.log( options.headers )
 	options = _.merge( {}, defaults, options );
 	for ( var i = 0; i < files.length; i++ ) {
 		variables = require( files[ i ] );
 	}
-	console.log( typeof options.headers );
 	for ( var module in variables ) {
 		if ( options.headers === "true" || options.headers === true ) {
 			output += "\n// ======================================================================\n" +

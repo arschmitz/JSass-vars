@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+var args = process.argv.slice( 0 );
+var _ = require( "lodash" );
+var commander = require( "commander" );
+var jsass = require( "../index.js" );
+var pkg = require( "../package.json" );
+var program = commander
+	.version( pkg.version )
+	.usage( "<file ...> [options]" )
+	.option( "-g, --global [string]", "Set value of global variable for js file [sassvars]", "sassvars" )
+	.option( "-d, --dest [path]", "Set the destination output path" )
+	.option( "-j, --js [path]", "Enable and set the output path for the js file true sets it to match" +
+		" dest replacing the extension" )
+	.option( "-h, --headers [boolean]", "Enable module headers in output file [true]", true )
+	.option( "-m, --module [boolean]", "Enable prepending modules names [false]", false )
+	.option( "-n, --namespace [string]", "Enable namespacing all rules" )
+	.option( "-t, --template <path>", "Provide a custom template file for js file" )
+	.parse( process.argv );
+var opts = program.opts();
+console.log( opts.js );
+var defaults = {
+	dest: opts.dest || false,
+	js: opts.js ? opts.js : opts.dest ? opts.dest.replace( ".scss", ".js" ) : undefined,
+	global: opts.global || "sassvars",
+	namespace: opts.namespace || "",
+	module: opts.module || false,
+	headers: opts.headers || true,
+	template: opts.template || process.cwd() + "/lib/template.js"
+}
+return jsass( program.args, defaults );
