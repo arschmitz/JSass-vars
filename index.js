@@ -1,6 +1,6 @@
 require( "babel/polyfill" );
 var path = require( "path" );
-var toSass = require( "./node_modules/json-sass/lib/jsToSassString.js" );
+var toSass = require( "json-sass/lib/jsToSassString" );
 var fs = require( "fs" );
 var glob = require( "glob" );
 var _ = require( "lodash" );
@@ -24,30 +24,29 @@ module.exports = function( src, options ) {
 	var output = "";
 	var defaults = {
 		dest: false,
-		jsDest: options.dest ? options.dest.replace( ".scss", ".js" ) : undefined,
+		js: options.dest ? options.dest.replace( ".scss", ".js" ) : undefined,
 		global: "sassvars",
 		namespace: "",
-		prependModule: false,
+		module: false,
 		headers: true,
 		template: __dirname + "/lib/template.js"
 	};
-
+	console.log( options.headers )
 	options = _.merge( {}, defaults, options );
-
 	for ( var i = 0; i < files.length; i++ ) {
 		variables = require( files[ i ] );
 	}
-
+	console.log( typeof options.headers );
 	for ( var module in variables ) {
-		if ( options.headers !== false ) {
+		if ( options.headers === "true" || options.headers === true ) {
 			output += "\n// ======================================================================\n" +
 				"// " + module + " variables\n" +
 				"// ======================================================================\n\n";
 		}
 
 		for ( var variable in variables[ module ] ) {
-			output += "$" + ( options.nameSpace || "" ) +
-				( options.prependModule ? module + "-" : "" ) + variable +
+			output += "$" + ( options.namespace || "" ) +
+				( options.module ? module + "-" : "" ) + variable +
 				": " + toSass( variables[ module ][ variable ].value ) + ";\n";
 		}
 	}
@@ -55,13 +54,12 @@ module.exports = function( src, options ) {
 	if ( options.dest ) {
 		fs.writeFileSync( options.dest, output );
 	}
-	if ( options.jsDest ) {
+	if ( options.js ) {
 		var template = fs.readFileSync( options.template, "utf-8" );
 
 		template = template.replace( "/*>>varibleObject>>*/", JSON.stringify( variables, undefined, 4 ) )
 			.replace( "/*>>globalName>>*/", options.global );
-		fs.writeFileSync( options.jsDest, template );
+		fs.writeFileSync( options.js, template );
 	}
-
 	return variables;
 }
