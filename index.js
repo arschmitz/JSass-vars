@@ -1,5 +1,3 @@
-require( "babel/polyfill" );
-var path = require( "path" );
 var toSass = require( "json-sass/lib/jsToSassString" );
 var fs = require( "fs" );
 var glob = require( "glob" );
@@ -60,4 +58,4 @@ module.exports = function( src, options ) {
 		fs.writeFileSync( options.js, template );
 	}
 	return variables;
-}
+};

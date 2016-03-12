@@ -1,134 +1,154 @@
-$chassis-breakpoints-viewport-sm-min: 400px;
-$chassis-breakpoints-viewport-md-min: 768px;
-$chassis-breakpoints-viewport-lg-min: 920px;
-$chassis-breakpoints-viewport-xl-min: 1200px;
-$chassis-colors-default: (
+
+// ======================================================================
+// breakpoints variables
+// ======================================================================
+
+$trueviewport-sm-min: 400px;
+$trueviewport-md-min: 768px;
+$trueviewport-lg-min: 920px;
+$trueviewport-xl-min: 1200px;
+
+// ======================================================================
+// colors variables
+// ======================================================================
+
+$truedefault: (
   base: #F5F5F5,
   light: #FFFFFF,
   dark: #EEEEEE,
   darker: #E0E0E0
 );
-$chassis-colors-primary: (
+$trueprimary: (
   base: #3F51B5,
   light: #5C6BC0,
   dark: #3949AB,
   darker: #303F9F
 );
-$chassis-colors-success: (
+$truesuccess: (
   base: #43A047,
   light: #4CAF50,
   dark: #388E3C,
   darker: #2E7D32
 );
-$chassis-colors-warning: (
+$truewarning: (
   base: #FF5722,
   light: #FF7043,
   dark: #F4511E,
   darker: #E64A19
 );
-$chassis-colors-info: (
+$trueinfo: (
   base: #039BE5,
   light: #03A9F4,
   dark: #0288D1,
   darker: #0277BD
 );
-$chassis-colors-error: (
+$trueerror: (
   base: #F44336,
   light: #EF5350,
   dark: #E53935,
   darker: #D32F2F
 );
-$chassis-colors-text: (
+$truetext: (
   base: #212121,
   light: #727272
 );
-$chassis-colors-background: (
+$truebackground: (
   base: #fff
 );
-$chassis-typography-normal: normal;
-$chassis-typography-bold: bold;
-$chassis-typography-color: #222;
-$chassis-typography-fontSize: 20px;
-$chassis-typography-lineHeight: 1.5;
-$chassis-typography-defaultFont: (
+
+// ======================================================================
+// typography variables
+// ======================================================================
+
+$truenormal: normal;
+$truebold: bold;
+$truecolor: #222;
+$truefontSize: 20px;
+$truelineHeight: 1.5;
+$truedefaultFont: (
   color: #222,
   font-size: 20px,
   line-height: 1.5
 );
-$chassis-typography-monospace: "courier new", monospace;
-$chassis-typography-serif: Georgia, "Times New Roman", Times, serif;
-$chassis-typography-sans: Helvetica, Arial, sans-serif;
-$chassis-btn-shadows: (
+$truemonospace: "courier new", monospace;
+$trueserif: Georgia, "Times New Roman", Times, serif;
+$truesans: Helvetica, Arial, sans-serif;
+
+// ======================================================================
+// btn variables
+// ======================================================================
+
+$trueshadows: (
   transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
   box-shadow-base: 0 2px 5px 0 rgba(0,0,0,.26),
   box-shadow-active: 0 3px 10px 0 rgba(0,0,0,.2),
   box-shadow-disabled: 0 0 0 rgba(0,0,0,0)
 );
-$chassis-btn-btn: (
+$truebtn: (
   font-weight: 500,
   margin: .25em,
   text-transform: uppercase,
   letter-spacing: 1px
 );
-$chassis-btn-font: $sans;
-$chassis-btn-default: (
+$truefont: $sans;
+$truedefault: (
   color: #212121,
   background: $default,
   border: transparent,
   shadow: true
 );
-$chassis-btn-primary: (
+$trueprimary: (
   color: #ffffff,
   background: $primary,
   border: transparent,
   shadow: true
 );
-$chassis-btn-success: (
+$truesuccess: (
   color: #ffffff,
   background: $success,
   border: transparent,
   shadow: true
 );
-$chassis-btn-info: (
+$trueinfo: (
   color: #ffffff,
   background: $info,
   border: transparent,
   shadow: true
 );
-$chassis-btn-warning: (
+$truewarning: (
   color: #ffffff,
   background: $warning,
   border: transparent,
   shadow: true
 );
-$chassis-btn-danger: (
+$truedanger: (
   color: #ffffff,
   background: $error,
   border: transparent,
   shadow: true
 );
-$chassis-btn-disabled: (
+$truedisabled: (
   opacity: .6
 );
-$chassis-btn-lg: (
+$truelg: (
   border-radius: 2px,
   font-size: 16px,
   line-height: 16px,
   padding: .75em 1.25em
 );
-$chassis-btn-md: (
+$truemd: (
   border-radius: 2px,
   font-size: 14px,
   line-height: 14px,
   padding: .5em 1em
 );
-$chassis-btn-sm: (
+$truesm: (
   border-radius: 2px,
   font-size: 12px,
   line-height: 12px,
   padding: .45em .75em
 );
-$chassis-btn-xs: (
+$truexs: (
   border-radius: 2px,
   font-size: 12px,
   line-height: 12px,

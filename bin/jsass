@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-var args = process.argv.slice( 0 );
-var _ = require( "lodash" );
 var commander = require( "commander" );
 var jsass = require( "../index.js" );
 var pkg = require( "../package.json" );
@@ -18,7 +16,6 @@ var program = commander
 	.option( "-t, --template <path>", "Provide a custom template file for js file" )
 	.parse( process.argv );
 var opts = program.opts();
-console.log( opts.js );
 var defaults = {
 	dest: opts.dest || false,
 	js: opts.js ? opts.js : opts.dest ? opts.dest.replace( ".scss", ".js" ) : undefined,
@@ -27,5 +24,5 @@ var defaults = {
 	module: opts.module || false,
 	headers: opts.headers || true,
 	template: opts.template || process.cwd() + "/lib/template.js"
-}
+};
 return jsass( program.args, defaults );

@@ -1,0 +1,156 @@
+
+// ======================================================================
+// breakpoints variables
+// ======================================================================
+
+$breakpoints-viewport-sm-min: 400px;
+$breakpoints-viewport-md-min: 768px;
+$breakpoints-viewport-lg-min: 920px;
+$breakpoints-viewport-xl-min: 1200px;
+
+// ======================================================================
+// colors variables
+// ======================================================================
+
+$colors-default: (
+  base: #F5F5F5,
+  light: #FFFFFF,
+  dark: #EEEEEE,
+  darker: #E0E0E0
+);
+$colors-primary: (
+  base: #3F51B5,
+  light: #5C6BC0,
+  dark: #3949AB,
+  darker: #303F9F
+);
+$colors-success: (
+  base: #43A047,
+  light: #4CAF50,
+  dark: #388E3C,
+  darker: #2E7D32
+);
+$colors-warning: (
+  base: #FF5722,
+  light: #FF7043,
+  dark: #F4511E,
+  darker: #E64A19
+);
+$colors-info: (
+  base: #039BE5,
+  light: #03A9F4,
+  dark: #0288D1,
+  darker: #0277BD
+);
+$colors-error: (
+  base: #F44336,
+  light: #EF5350,
+  dark: #E53935,
+  darker: #D32F2F
+);
+$colors-text: (
+  base: #212121,
+  light: #727272
+);
+$colors-background: (
+  base: #fff
+);
+
+// ======================================================================
+// typography variables
+// ======================================================================
+
+$typography-normal: normal;
+$typography-bold: bold;
+$typography-color: #222;
+$typography-fontSize: 20px;
+$typography-lineHeight: 1.5;
+$typography-defaultFont: (
+  color: #222,
+  font-size: 20px,
+  line-height: 1.5
+);
+$typography-monospace: "courier new", monospace;
+$typography-serif: Georgia, "Times New Roman", Times, serif;
+$typography-sans: Helvetica, Arial, sans-serif;
+
+// ======================================================================
+// btn variables
+// ======================================================================
+
+$btn-shadows: (
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+  box-shadow-base: 0 2px 5px 0 rgba(0,0,0,.26),
+  box-shadow-active: 0 3px 10px 0 rgba(0,0,0,.2),
+  box-shadow-disabled: 0 0 0 rgba(0,0,0,0)
+);
+$btn-btn: (
+  font-weight: 500,
+  margin: .25em,
+  text-transform: uppercase,
+  letter-spacing: 1px
+);
+$btn-font: $sans;
+$btn-default: (
+  color: #212121,
+  background: $default,
+  border: transparent,
+  shadow: true
+);
+$btn-primary: (
+  color: #ffffff,
+  background: $primary,
+  border: transparent,
+  shadow: true
+);
+$btn-success: (
+  color: #ffffff,
+  background: $success,
+  border: transparent,
+  shadow: true
+);
+$btn-info: (
+  color: #ffffff,
+  background: $info,
+  border: transparent,
+  shadow: true
+);
+$btn-warning: (
+  color: #ffffff,
+  background: $warning,
+  border: transparent,
+  shadow: true
+);
+$btn-danger: (
+  color: #ffffff,
+  background: $error,
+  border: transparent,
+  shadow: true
+);
+$btn-disabled: (
+  opacity: .6
+);
+$btn-lg: (
+  border-radius: 2px,
+  font-size: 16px,
+  line-height: 16px,
+  padding: .75em 1.25em
+);
+$btn-md: (
+  border-radius: 2px,
+  font-size: 14px,
+  line-height: 14px,
+  padding: .5em 1em
+);
+$btn-sm: (
+  border-radius: 2px,
+  font-size: 12px,
+  line-height: 12px,
+  padding: .45em .75em
+);
+$btn-xs: (
+  border-radius: 2px,
+  font-size: 12px,
+  line-height: 12px,
+  padding: .35em
+);

@@ -1,0 +1,136 @@
+$viewport-sm-min: 400px;
+$viewport-md-min: 768px;
+$viewport-lg-min: 920px;
+$viewport-xl-min: 1200px;
+$default: (
+  base: #F5F5F5,
+  light: #FFFFFF,
+  dark: #EEEEEE,
+  darker: #E0E0E0
+);
+$primary: (
+  base: #3F51B5,
+  light: #5C6BC0,
+  dark: #3949AB,
+  darker: #303F9F
+);
+$success: (
+  base: #43A047,
+  light: #4CAF50,
+  dark: #388E3C,
+  darker: #2E7D32
+);
+$warning: (
+  base: #FF5722,
+  light: #FF7043,
+  dark: #F4511E,
+  darker: #E64A19
+);
+$info: (
+  base: #039BE5,
+  light: #03A9F4,
+  dark: #0288D1,
+  darker: #0277BD
+);
+$error: (
+  base: #F44336,
+  light: #EF5350,
+  dark: #E53935,
+  darker: #D32F2F
+);
+$text: (
+  base: #212121,
+  light: #727272
+);
+$background: (
+  base: #fff
+);
+$normal: normal;
+$bold: bold;
+$color: #222;
+$fontSize: 20px;
+$lineHeight: 1.5;
+$defaultFont: (
+  color: #222,
+  font-size: 20px,
+  line-height: 1.5
+);
+$monospace: "courier new", monospace;
+$serif: Georgia, "Times New Roman", Times, serif;
+$sans: Helvetica, Arial, sans-serif;
+$shadows: (
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+  box-shadow-base: 0 2px 5px 0 rgba(0,0,0,.26),
+  box-shadow-active: 0 3px 10px 0 rgba(0,0,0,.2),
+  box-shadow-disabled: 0 0 0 rgba(0,0,0,0)
+);
+$btn: (
+  font-weight: 500,
+  margin: .25em,
+  text-transform: uppercase,
+  letter-spacing: 1px
+);
+$font: $sans;
+$default: (
+  color: #212121,
+  background: $default,
+  border: transparent,
+  shadow: true
+);
+$primary: (
+  color: #ffffff,
+  background: $primary,
+  border: transparent,
+  shadow: true
+);
+$success: (
+  color: #ffffff,
+  background: $success,
+  border: transparent,
+  shadow: true
+);
+$info: (
+  color: #ffffff,
+  background: $info,
+  border: transparent,
+  shadow: true
+);
+$warning: (
+  color: #ffffff,
+  background: $warning,
+  border: transparent,
+  shadow: true
+);
+$danger: (
+  color: #ffffff,
+  background: $error,
+  border: transparent,
+  shadow: true
+);
+$disabled: (
+  opacity: .6
+);
+$lg: (
+  border-radius: 2px,
+  font-size: 16px,
+  line-height: 16px,
+  padding: .75em 1.25em
+);
+$md: (
+  border-radius: 2px,
+  font-size: 14px,
+  line-height: 14px,
+  padding: .5em 1em
+);
+$sm: (
+  border-radius: 2px,
+  font-size: 12px,
+  line-height: 12px,
+  padding: .45em .75em
+);
+$xs: (
+  border-radius: 2px,
+  font-size: 12px,
+  line-height: 12px,
+  padding: .35em
+);

@@ -4,7 +4,7 @@
     } else if ( typeof exports === "object" ) {
         module.exports = factory();
     } else {
-        root.boom = factory();
+        root.warming = factory();
   }
 }( this, function () {
 return {
