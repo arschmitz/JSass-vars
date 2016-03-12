@@ -1,31 +1,78 @@
 var fs = require( "fs" );
 var jsass = require( "../index.js" );
 var rimraf = require( "rimraf" );
+var resolve = require( "resolve" );
 var tests = [
 	{
-		src: "/control/default.scss",
+		src: "./tests/src/*",
+		dest: "/control/default.scss",
 		js: "/control/default.js",
 		test: "Default"
 	},
 	{
-		src: "/control/headers.scss",
+		src: "./tests/src/*",
+		dest: "/control/headers.scss",
 		js: "/control/headers.js",
-		test: "Headers"
+		test: "Headers",
+		option: {
+			name: "headers",
+			value: false
+		}
 	},
 	{
-		src: "/control/module.scss",
+		src: "./tests/src/*",
+		dest: "/control/module.scss",
 		js: "/control/module.js",
-		test: "Module"
+		test: "Module",
+		option: {
+			name: "module",
+			value: true
+		}
 	},
 	{
-		src: "/control/namespace.scss",
+		src: "./tests/src/*",
+		dest: "/control/namespace.scss",
 		js: "/control/namespace.js",
-		test: "Namespace"
+		test: "Namespace",
+		option: {
+			name: "namespace",
+			value: "test-"
+		}
 	},
 	{
-		src: "/control/global.scss",
+		src: "./tests/src/*",
+		dest: "/control/global.scss",
 		js: "/control/global.js",
-		test: "Global"
+		test: "Global",
+		option: {
+			name: "global",
+			value: "warming"
+		}
+	},
+	{
+		src: "./tests/src/*",
+		dest: "/control/template.scss",
+		js: "/control/template.js",
+		test: "Template",
+		option: {
+			name: "template",
+			value: "./tests/test-template.js"
+		}
+	},
+	{
+		src: [
+			"./tests/src/typography.js",
+			"./tests/src/colors.js"
+		],
+		dest: "/control/fileArray.scss",
+		js: "/control/fileArray.js",
+		test: "fileArray"
+	},
+	{
+		src: "./tests/src/z_buttons.js",
+		dest: "/control/dependency.scss",
+		js: "/control/dependency.js",
+		test: "dependencies"
 	}
 ];
 var testExport = {
@@ -48,29 +95,45 @@ var testExport = {
 	},
 	tearDown: function( callback ) {
 		rimraf( process.cwd() + "/tests/temp/", callback );
+		var path = resolve.sync( process.cwd() + "/tests/src/chassis.js" );
+		if ( require.cache[ path ] ) {
+			delete require.cache[ path ];
+		}
 	}
 };
 tests.forEach( function( test ) {
-	compareFiles( test );
+	compareFiles( testExport, test );
 } );
-
-function compareFiles( opt ) {
-	testExport[ opt.test ] = function( test ) {
+function compareFiles( module, opt ) {
+	module[ opt.test ] = function( test ) {
 		test.expect( 4 );
 
 		var jscontrol = require( __dirname + opt.js );
-		var control = fs.readFileSync( __dirname + opt.src, "utf8" );
+		var control = fs.readFileSync( __dirname + opt.dest, "utf8" );
 		var jsstring = fs.readFileSync( __dirname + opt.js, "utf8" );
-		var output = jsass( "./tests/src/*", {
+		var options = {
 			dest: "./tests/temp/test.scss"
-		} );
+		};
+		if ( opt.option ) {
+			options[ opt.option.name ] = opt.option.value;
+		}
+		var output = jsass( opt.src, options );
 		var scss = fs.readFileSync( "./tests/temp/test.scss", "utf8" );
 		var js = fs.readFileSync( "./tests/temp/test.js", "utf8" );
-		test.ok( control, scss, opt.test + " scss file correct" );
-		test.ok( jsstring, js, opt.test + "js file correct" );
-		test.ok( control, output.scss, opt.test + " scss return correct" );
-		test.ok( jscontrol, output.js, opt.test + "js return correct" );
+		test.equal( control, scss, opt.test + " scss file correct" );
+		test.equal( jsstring, js, opt.test + "js file correct" );
+		test.equal( control, output.scss, opt.test + " scss return correct" );
+		test.deepEqual( jscontrol, output.js, opt.test + "js return correct" );
 		test.done();
 	};
 }
+testExport.js = function( test ) {
+	jsass( "./tests/src/*", {
+		dest: "./tests/temp/test.scss",
+		js: "./tests/temp/js-test.scss"
+	} );
+	test.expect( 1 );
+	test.ok( fs.existsSync( "./tests/temp/js-test.scss" ), "js option changes js file name" );
+	test.done();
+};
 module.exports.basic = testExport;

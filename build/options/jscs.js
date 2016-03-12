@@ -10,7 +10,8 @@ module.exports = {
 			"Gruntfile.js",
 			"bin/jsass",
 			"build/**/*.js",
-			"tests/*.js"
+			"tests/*.js",
+			"!tests/test-template.js"
 		]
 	}
 };

@@ -1,154 +1,127 @@
 
 // ======================================================================
-// breakpoints variables
-// ======================================================================
-
-$test-viewport-sm-min: 400px;
-$test-viewport-md-min: 768px;
-$test-viewport-lg-min: 920px;
-$test-viewport-xl-min: 1200px;
-
-// ======================================================================
 // colors variables
 // ======================================================================
 
-$test-default: (
+$default: (
   base: #F5F5F5,
   light: #FFFFFF,
   dark: #EEEEEE,
   darker: #E0E0E0
 );
-$test-primary: (
+$primary: (
   base: #3F51B5,
   light: #5C6BC0,
   dark: #3949AB,
   darker: #303F9F
 );
-$test-success: (
+$success: (
   base: #43A047,
   light: #4CAF50,
   dark: #388E3C,
   darker: #2E7D32
 );
-$test-warning: (
+$warning: (
   base: #FF5722,
   light: #FF7043,
   dark: #F4511E,
   darker: #E64A19
 );
-$test-info: (
+$info: (
   base: #039BE5,
   light: #03A9F4,
   dark: #0288D1,
   darker: #0277BD
 );
-$test-error: (
+$error: (
   base: #F44336,
   light: #EF5350,
   dark: #E53935,
   darker: #D32F2F
 );
-$test-text: (
+$text: (
   base: #212121,
   light: #727272
 );
-$test-background: (
+$background: (
   base: #fff
 );
-
-// ======================================================================
-// typography variables
-// ======================================================================
-
-$test-normal: normal;
-$test-bold: bold;
-$test-color: #222;
-$test-fontSize: 20px;
-$test-lineHeight: 1.5;
-$test-defaultFont: (
-  color: #222,
-  font-size: 20px,
-  line-height: 1.5
-);
-$test-monospace: "courier new", monospace;
-$test-serif: Georgia, "Times New Roman", Times, serif;
-$test-sans: Helvetica, Arial, sans-serif;
 
 // ======================================================================
 // btn variables
 // ======================================================================
 
-$test-shadows: (
+$shadows: (
   transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
   box-shadow-base: 0 2px 5px 0 rgba(0,0,0,.26),
   box-shadow-active: 0 3px 10px 0 rgba(0,0,0,.2),
   box-shadow-disabled: 0 0 0 rgba(0,0,0,0)
 );
-$test-btn: (
+$btn: (
   font-weight: 500,
   margin: .25em,
   text-transform: uppercase,
   letter-spacing: 1px
 );
-$test-font: $sans;
-$test-default: (
+$font: $sans;
+$default: (
   color: #212121,
   background: $default,
   border: transparent,
   shadow: true
 );
-$test-primary: (
+$primary: (
   color: #ffffff,
   background: $primary,
   border: transparent,
   shadow: true
 );
-$test-success: (
+$success: (
   color: #ffffff,
   background: $success,
   border: transparent,
   shadow: true
 );
-$test-info: (
+$info: (
   color: #ffffff,
   background: $info,
   border: transparent,
   shadow: true
 );
-$test-warning: (
+$warning: (
   color: #ffffff,
   background: $warning,
   border: transparent,
   shadow: true
 );
-$test-danger: (
+$danger: (
   color: #ffffff,
   background: $error,
   border: transparent,
   shadow: true
 );
-$test-disabled: (
+$disabled: (
   opacity: .6
 );
-$test-lg: (
+$lg: (
   border-radius: 2px,
   font-size: 16px,
   line-height: 16px,
   padding: .75em 1.25em
 );
-$test-md: (
+$md: (
   border-radius: 2px,
   font-size: 14px,
   line-height: 14px,
   padding: .5em 1em
 );
-$test-sm: (
+$sm: (
   border-radius: 2px,
   font-size: 12px,
   line-height: 12px,
   padding: .45em .75em
 );
-$test-xs: (
+$xs: (
   border-radius: 2px,
   font-size: 12px,
   line-height: 12px,

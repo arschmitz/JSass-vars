@@ -1,8 +1,9 @@
 ( function( root, factory ) {
 	if ( typeof define === "function" && define.amd ) {
-		define( [ "./chassis" ], factory );
+		define( [ "./chassis", "./colors" ], factory );
 	} else if ( typeof exports === "object" ) {
-		module.exports = factory( require( "./chassis" ) );
+		require( "./chassis" )
+		module.exports = factory( require( "./colors" ) );
 	} else {
 		root.chassis = factory( root.chassis );
 	}

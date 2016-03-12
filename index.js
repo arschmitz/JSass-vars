@@ -2,6 +2,7 @@ var toSass = require( "json-sass/lib/jsToSassString" );
 var fs = require( "fs" );
 var glob = require( "glob" );
 var _ = require( "lodash" );
+var resolve = require( "resolve" );
 
 function getFiles( files ) {
 	if ( typeof files !== "object" ) {
@@ -12,7 +13,6 @@ function getFiles( files ) {
 	for ( var i = 0; i < files.length; i++ ) {
 		combined = _.union( combined, glob.sync( files[ i ] ) );
 	}
-
 	return combined;
 }
 
@@ -60,6 +60,12 @@ module.exports = function( src, options ) {
 		template = template.replace( "/*>>varibleObject>>*/", JSON.stringify( variables, undefined, 4 ) )
 			.replace( "/*>>globalName>>*/", options.global );
 		fs.writeFileSync( options.js, template );
+	}
+	for ( var j = 0; j < files.length; j++ ) {
+		var path = resolve.sync( files[ j ] );
+		if ( require.cache[ path ] ) {
+			delete require.cache[ path ];
+		}
 	}
 	return {
 		scss: output,
