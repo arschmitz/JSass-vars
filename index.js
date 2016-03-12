@@ -5,7 +5,7 @@ var _ = require( "lodash" );
 
 function getFiles( files ) {
 	if ( typeof files !== "object" ) {
-		return glob.sync( files );
+		return glob.sync( process.cwd() + "/" + files );
 	}
 	var combined = [];
 
@@ -17,6 +17,7 @@ function getFiles( files ) {
 }
 
 module.exports = function( src, options ) {
+	options = options || {};
 	var files = getFiles( src );
 	var variables;
 	var output = "";
@@ -29,6 +30,9 @@ module.exports = function( src, options ) {
 		headers: true,
 		template: __dirname + "/lib/template.js"
 	};
+	if ( !files.length ) {
+		throw new Error( "File " + src + " does not exist. No source files provided" );
+	}
 	options = _.merge( {}, defaults, options );
 	for ( var i = 0; i < files.length; i++ ) {
 		variables = require( files[ i ] );
@@ -57,5 +61,8 @@ module.exports = function( src, options ) {
 			.replace( "/*>>globalName>>*/", options.global );
 		fs.writeFileSync( options.js, template );
 	}
-	return variables;
+	return {
+		scss: output,
+		js: variables
+	};
 };
