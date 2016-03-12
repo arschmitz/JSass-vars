@@ -15,9 +15,9 @@ with out AMD it will create a single global object containing the varibels.
 ```js
 var jsass = require( "jsass.js" );
 
-spider( src [,options] );
+var output = jsass( src [,options] );
 ```
-
+Returns an object with js, and scss properties containing a JavaScript Object and a sass string respectively
 #### Command line
 ```
 jsass src [, option1 ] [, option2 ]
