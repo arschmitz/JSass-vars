@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/arschmitz/jsass-vars.png)](https://travis-ci.org/arschmitz/jsass-vars) [![NPM version](https://badge.fury.io/js/jsass-vars.png)](https://www.npmjs.com/package/jsass-vars)
+[![Build Status](https://travis-ci.org/arschmitz/JSass-vars.png)](https://travis-ci.org/arschmitz/jsass-vars) [![NPM version](https://badge.fury.io/js/jsass-vars.png)](https://www.npmjs.com/package/jsass-vars)
 
 
 # JSass Vars
