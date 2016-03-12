@@ -27,9 +27,9 @@
     "css",
     "scss"
   ],
-  "main": "qunit-assert-classes.js",
+  "main": "index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt"
   },
   "peerDependencies": {
     "grunt": "^0.4.5"
