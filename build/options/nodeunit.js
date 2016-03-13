@@ -1,3 +1,3 @@
 module.exports = {
-	all: [ "tests/tests.js" ]
+	all: [ "tests/cli.js", "tests/node_module.js" ]
 };
