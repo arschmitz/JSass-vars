@@ -94,7 +94,9 @@ var testExport = {
 		} );
 	},
 	tearDown: function( callback ) {
-		rimraf( process.cwd() + "/tests/temp/", callback );
+		callback();
+
+		//Rimraf( process.cwd() + "/tests/temp/", callback );
 		var path = resolve.sync( process.cwd() + "/tests/src/chassis.js" );
 		if ( require.cache[ path ] ) {
 			delete require.cache[ path ];

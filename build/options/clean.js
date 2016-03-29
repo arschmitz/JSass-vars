@@ -1,3 +1,4 @@
 module.exports = {
-	temp: "tests/temp"
+
+	//Temp: "tests/temp"
 };

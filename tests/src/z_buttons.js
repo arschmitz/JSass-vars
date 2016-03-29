@@ -2,13 +2,18 @@
 	if ( typeof define === "function" && define.amd ) {
 		define( [ "./chassis", "./colors" ], factory );
 	} else if ( typeof exports === "object" ) {
-		require( "./chassis" )
+		require( "./chassis" );
+		require( "./typography" );
 		module.exports = factory( require( "./colors" ) );
 	} else {
 		root.chassis = factory( root.chassis );
 	}
 }( this, function( chassis ) {
-
+function deref( value ) {
+	return function() {
+		return value;
+	}
+}
 chassis.btn = {
 	"shadows": {
 		name: "Button Shadow Styles",
@@ -31,13 +36,13 @@ chassis.btn = {
 	},
 	"font": {
 		name: "Button Font",
-		value: "$sans"
+		value: () => "typography.sans"
 	},
 	"default": {
 		name: "Default Button",
 		value: {
 			"color": "#212121",
-			"background": "$default",
+			"background": () => "colors.default",
 			"border": "transparent",
 			"shadow": "true"
 		}
@@ -46,7 +51,7 @@ chassis.btn = {
 		name: "Primary Button",
 		value: {
 			"color": "#ffffff",
-			"background": "$primary",
+			"background": () => "colors.primary",
 			"border": "transparent",
 			"shadow": "true"
 		}
@@ -55,7 +60,7 @@ chassis.btn = {
 		name: "Success Button",
 		value: {
 			"color": "#ffffff",
-			"background": "$success",
+			"background": () => "colors.success",
 			"border": "transparent",
 			"shadow": "true"
 		}
@@ -65,7 +70,7 @@ chassis.btn = {
 		name: "Info Button",
 		value: {
 			"color": "#ffffff",
-			"background": "$info",
+			"background": () => "colors.info",
 			"border": "transparent",
 			"shadow": "true"
 		}
@@ -74,7 +79,7 @@ chassis.btn = {
 		name: "Warning Button",
 		value: {
 			"color": "#ffffff",
-			"background": "$warning",
+			"background": () => "colors.warning",
 			"border": "transparent",
 			"shadow": "true"
 		}
@@ -83,7 +88,7 @@ chassis.btn = {
 		name: "Danger Button",
 		value: {
 			"color": "#ffffff",
-			"background": "$error",
+			"background": () => "colors.error",
 			"border": "transparent",
 			"shadow": "true"
 		}

@@ -9,6 +9,51 @@ create by the src modules. It also creates a valid JacaScript module with UMD wr
 return an object containing all your variables and values for use in your JS scripts. In the browser
 with out AMD it will create a single global object containing the varibels.
 
+Functions have a special meaning in jSass. When constructing the js and scss files jSass checks if the
+value is a function. If the value is a function it is executed and the return value is "de-refrenced". This is used to be able to refrence previously defined variables. jSass expects the return value from functions to be a string in the form of "module.property".
+
+Example:
+#### a.js
+```js
+module.exports = {
+	foo: {
+		value: "bar"
+	}
+};
+```
+#### b.js
+```js
+module.exports = {
+	baz: {
+		value: () => "a.bar"
+	}
+};
+```
+#### output.js
+```js
+module.exports = {
+	a: {
+		foo: {
+			value: "bar"
+		}
+	},
+	b: {
+		baz: {
+			value: "bar"
+		}
+	}
+};
+```
+
+#### output.scss
+```sass
+$a: bar;
+$b: bar;
+```
+
+### Note
+The recomended format for doing this is to use ES6 arrow functions as in the example above
+
 ## Usage
 
 #### Node Module

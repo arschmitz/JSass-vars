@@ -90,40 +90,40 @@ $btn-btn: (
   text-transform: uppercase,
   letter-spacing: 1px
 );
-$btn-font: $sans;
+$btn-font: $typography-sans;
 $btn-default: (
   color: #212121,
-  background: $default,
+  background: $colors-default,
   border: transparent,
   shadow: true
 );
 $btn-primary: (
   color: #ffffff,
-  background: $primary,
+  background: $colors-primary,
   border: transparent,
   shadow: true
 );
 $btn-success: (
   color: #ffffff,
-  background: $success,
+  background: $colors-success,
   border: transparent,
   shadow: true
 );
 $btn-info: (
   color: #ffffff,
-  background: $info,
+  background: $colors-info,
   border: transparent,
   shadow: true
 );
 $btn-warning: (
   color: #ffffff,
-  background: $warning,
+  background: $colors-warning,
   border: transparent,
   shadow: true
 );
 $btn-danger: (
   color: #ffffff,
-  background: $error,
+  background: $colors-error,
   border: transparent,
   shadow: true
 );

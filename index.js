@@ -30,12 +30,23 @@ module.exports = function( src, options ) {
 		headers: true,
 		template: __dirname + "/lib/template.js"
 	};
+	function deRef( jsVal ) {
+		var retVal = jsVal();
+		var parts = retVal.split( "." );
+		if ( !options.module ) {
+			parts.shift();
+		}
+		return {
+			jsVal: eval( "variables." + retVal ).value,
+			scssVal: parts.join( "-" )
+		};
+	}
 	if ( !files.length ) {
 		throw new Error( "File " + src + " does not exist. No source files provided" );
 	}
 	options = _.merge( {}, defaults, options );
-	for ( var i = 0; i < files.length; i++ ) {
-		variables = require( files[ i ] );
+	for ( var k = 0; k < files.length; k++ ) {
+		variables = require( files[ k ] );
 	}
 	for ( var module in variables ) {
 		if ( options.headers === "true" || options.headers === true ) {
@@ -45,9 +56,25 @@ module.exports = function( src, options ) {
 		}
 
 		for ( var variable in variables[ module ] ) {
+			var jsVal = variables[ module ][ variable ].value;
+			var deRefVal;
+			if ( typeof jsVal === "object" ) {
+				jsVal = _.merge( {}, jsVal );
+				for ( var i in jsVal ) {
+					if ( typeof jsVal[ i ] === "function" ) {
+						deRefVal = deRef( jsVal[ i ] );
+						variables[ module ][ variable ].value[ i ] = deRefVal.jsVal;
+						jsVal[ i ] = "$" + deRefVal.scssVal;
+					}
+				}
+			} else if ( typeof jsVal === "function" ) {
+				deRefVal = deRef( jsVal );
+				variables[ module ][ variable ].value = deRefVal.jsVal;
+				jsVal = "$" + deRefVal.scssVal;
+			}
 			output += "$" + ( options.namespace || "" ) +
 				( options.module ? module + "-" : "" ) + variable +
-				": " + toSass( variables[ module ][ variable ].value ) + ";\n";
+				": " + toSass( jsVal ) + ";\n";
 		}
 	}
 

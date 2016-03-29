@@ -8,6 +8,48 @@
   }
 }( this, function () {
 return {
+    "typography": {
+        "normal": {
+            "name": "Font weight - Normal",
+            "value": "normal"
+        },
+        "bold": {
+            "name": "Font weight - Bold",
+            "value": "bold"
+        },
+        "color": {
+            "name": "Font color",
+            "value": "#222"
+        },
+        "fontSize": {
+            "name": "Font size",
+            "value": "20px"
+        },
+        "lineHeight": {
+            "name": "Line Height",
+            "value": 1.5
+        },
+        "defaultFont": {
+            "name": "Type Style - Default",
+            "value": {
+                "color": "#222",
+                "font-size": "20px",
+                "line-height": 1.5
+            }
+        },
+        "monospace": {
+            "name": "Font Family - Monospace",
+            "value": "\"courier new\", monospace"
+        },
+        "serif": {
+            "name": "Font Family - Serif",
+            "value": "Georgia, \"Times New Roman\", Times, serif"
+        },
+        "sans": {
+            "name": "Font Family - Sans",
+            "value": "Helvetica, Arial, sans-serif"
+        }
+    },
     "colors": {
         "default": {
             "name": "Default Colors",
@@ -98,13 +140,18 @@ return {
         },
         "font": {
             "name": "Button Font",
-            "value": "$sans"
+            "value": "Helvetica, Arial, sans-serif"
         },
         "default": {
             "name": "Default Button",
             "value": {
                 "color": "#212121",
-                "background": "$default",
+                "background": {
+                    "base": "#F5F5F5",
+                    "light": "#FFFFFF",
+                    "dark": "#EEEEEE",
+                    "darker": "#E0E0E0"
+                },
                 "border": "transparent",
                 "shadow": "true"
             }
@@ -113,7 +160,12 @@ return {
             "name": "Primary Button",
             "value": {
                 "color": "#ffffff",
-                "background": "$primary",
+                "background": {
+                    "base": "#3F51B5",
+                    "light": "#5C6BC0",
+                    "dark": "#3949AB",
+                    "darker": "#303F9F"
+                },
                 "border": "transparent",
                 "shadow": "true"
             }
@@ -122,7 +174,12 @@ return {
             "name": "Success Button",
             "value": {
                 "color": "#ffffff",
-                "background": "$success",
+                "background": {
+                    "base": "#43A047",
+                    "light": "#4CAF50",
+                    "dark": "#388E3C",
+                    "darker": "#2E7D32"
+                },
                 "border": "transparent",
                 "shadow": "true"
             }
@@ -131,7 +188,12 @@ return {
             "name": "Info Button",
             "value": {
                 "color": "#ffffff",
-                "background": "$info",
+                "background": {
+                    "base": "#039BE5",
+                    "light": "#03A9F4",
+                    "dark": "#0288D1",
+                    "darker": "#0277BD"
+                },
                 "border": "transparent",
                 "shadow": "true"
             }
@@ -140,7 +202,12 @@ return {
             "name": "Warning Button",
             "value": {
                 "color": "#ffffff",
-                "background": "$warning",
+                "background": {
+                    "base": "#FF5722",
+                    "light": "#FF7043",
+                    "dark": "#F4511E",
+                    "darker": "#E64A19"
+                },
                 "border": "transparent",
                 "shadow": "true"
             }
@@ -149,7 +216,12 @@ return {
             "name": "Danger Button",
             "value": {
                 "color": "#ffffff",
-                "background": "$error",
+                "background": {
+                    "base": "#F44336",
+                    "light": "#EF5350",
+                    "dark": "#E53935",
+                    "darker": "#D32F2F"
+                },
                 "border": "transparent",
                 "shadow": "true"
             }
