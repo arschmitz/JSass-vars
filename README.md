@@ -25,7 +25,7 @@ module.exports = {
 ```js
 module.exports = {
 	baz: {
-		value: () => "a.bar"
+		value: () => "a.foo"
 	}
 };
 ```
@@ -47,12 +47,15 @@ module.exports = {
 
 #### output.scss
 ```sass
-$a: bar;
-$b: bar;
+$foo: bar;
+$baz: $foo;
 ```
 
 ### Note
-The recomended format for doing this is to use ES6 arrow functions as in the example above
+The recomended syntax for basic de-refrencing is to use an ES6 arrow function for easy readability
+```js
+prop: () => "module.prop"
+```
 
 ## Usage
 
