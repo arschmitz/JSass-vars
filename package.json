@@ -27,6 +27,9 @@
     "css",
     "scss"
   ],
+  "engines" : {
+    "node" : ">=4.0.0"
+  },
   "main": "index.js",
   "scripts": {
     "test": "grunt"
@@ -35,7 +38,6 @@
     "grunt": "^0.4.5"
   },
   "dependencies": {
-    "babel": "~4.1.0",
     "commander": "^2.9.0",
     "fs-extra": "^0.26.7",
     "glob": "5.0.6",
