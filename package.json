@@ -1,7 +1,7 @@
 {
   "name": "jsass-vars",
   "description": "A module to compile Javascript modules into valid scss variable files and a coresponding combined javascript file for use in the browser",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "author": {
     "name": "Alex Schmitz",
     "url": "https://github.com/arschmitz/jsass-vars/blob/master/AUTHORS.txt"
@@ -27,8 +27,8 @@
     "css",
     "scss"
   ],
-  "engines" : {
-    "node" : ">=4.0.0"
+  "engines": {
+    "node": ">=4.0.0"
   },
   "main": "index.js",
   "scripts": {
