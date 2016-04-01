@@ -1,5 +1,5 @@
 var toSass = require( "json-sass/lib/jsToSassString" );
-var fs = require( "fs" );
+var fs = require( "fs-extra" );
 var glob = require( "glob" );
 var _ = require( "lodash" );
 var resolve = require( "resolve" );
@@ -79,14 +79,14 @@ module.exports = function( src, options ) {
 	}
 
 	if ( options.dest ) {
-		fs.writeFileSync( options.dest, output );
+		fs.outputFileSync( options.dest, output );
 	}
 	if ( options.js ) {
 		var template = fs.readFileSync( options.template, "utf-8" );
 
 		template = template.replace( "/*>>varibleObject>>*/", JSON.stringify( variables, undefined, 4 ) )
 			.replace( "/*>>globalName>>*/", options.global );
-		fs.writeFileSync( options.js, template );
+		fs.outputFileSync( options.js, template );
 	}
 	for ( var j = 0; j < files.length; j++ ) {
 		var path = resolve.sync( files[ j ] );

@@ -67,21 +67,7 @@ var tests = [
 ];
 var testExport = {
 	setUp: function( callback ) {
-		fs.mkdir( process.cwd() + "/tests/temp/", function( err ) {
-			if ( !err ) {
-				callback();
-				return;
-			}
-			rimraf( process.cwd() + "/tests/temp/", function() {
-				fs.mkdir( process.cwd() + "/tests/temp/", function( error ) {
-					if ( !error ) {
-						callback();
-						return;
-					}
-					throw error;
-				} );
-			} );
-		} );
+		rimraf( process.cwd() + "/tests/temp/", callback );
 	},
 	tearDown: function( callback ) {
 		rimraf( process.cwd() + "/tests/temp/", callback );

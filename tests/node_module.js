@@ -77,26 +77,10 @@ var tests = [
 ];
 var testExport = {
 	setUp: function( callback ) {
-		fs.mkdir( process.cwd() + "/tests/temp/", function( err ) {
-			if ( !err ) {
-				callback();
-				return;
-			}
-			rimraf( process.cwd() + "/tests/temp/", function() {
-				fs.mkdir( process.cwd() + "/tests/temp/", function( error ) {
-					if ( !error ) {
-						callback();
-						return;
-					}
-					throw error;
-				} );
-			} );
-		} );
+		rimraf( process.cwd() + "/tests/temp/", callback );
 	},
 	tearDown: function( callback ) {
-		callback();
-
-		//Rimraf( process.cwd() + "/tests/temp/", callback );
+		rimraf( process.cwd() + "/tests/temp/", callback );
 		var path = resolve.sync( process.cwd() + "/tests/src/chassis.js" );
 		if ( require.cache[ path ] ) {
 			delete require.cache[ path ];
